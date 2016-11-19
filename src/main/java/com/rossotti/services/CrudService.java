@@ -2,7 +2,7 @@ package com.rossotti.services;
 
 import java.util.List;
 
-public interface CRUDService<T> {
+public interface CrudService<T> {
 	List<?> listAll();
 
 	T getById(Long id);

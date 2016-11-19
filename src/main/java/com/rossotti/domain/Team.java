@@ -1,18 +1,10 @@
 package com.rossotti.domain;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name="team", uniqueConstraints=@UniqueConstraint(columnNames={"teamKey", "fromDate", "toDate"}))
-public class Team {
-	public Team() {
-	}
-
+@Table(name="team", uniqueConstraints=@UniqueConstraint(columnNames={"teamKey"}))
+public class Team implements DomainObject {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
@@ -30,26 +22,6 @@ public class Team {
 	}
 	public void setTeamKey(String teamKey) {
 		this.teamKey = teamKey;
-	}
-
-	@Column(name="fromDate", nullable=false)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-	private LocalDate fromDate;
-	public LocalDate getFromDate() {
-		return fromDate;
-	}
-	public void setFromDate(LocalDate fromDate) {
-		this.fromDate = fromDate;
-	}
-
-	@Column(name="toDate", nullable=false)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-	private LocalDate toDate;
-	public LocalDate getToDate() {
-		return toDate;
-	}
-	public void setToDate(LocalDate toDate) {
-		this.toDate = toDate;
 	}
 
 	@Column(name="firstName", length=15, nullable=false)
@@ -151,8 +123,6 @@ public class Team {
 
 	public String toString() {
 		return ("\n" + "  id: " + this.id + "\n") +
-				"  teamKey: " + this.teamKey + "\n" +
-				"  fromDate: " + this.fromDate + "\n" +
-				"  toDate: " + this.toDate;
+				"  teamKey: " + this.teamKey + "\n";
 	}
 }
