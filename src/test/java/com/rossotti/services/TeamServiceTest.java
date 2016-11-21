@@ -13,37 +13,31 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TeamRepositoryTest {
+public class TeamServiceTest {
 
-	private TeamRepository teamRepository;
+	private TeamService teamService;
 
 	@Autowired
-	public void setTeamRepository(TeamRepository teamRepository) {
-		this.teamRepository = teamRepository;
+	public void setTeamService(TeamService teamService) {
+		this.teamService = teamService;
 	}
 
 	@Test
 	public void findAll() {
-		List<Team> teams = (List<Team>)teamRepository.findAll();
+		List<Team> teams = (List<Team>)teamService.listAll();
 		Assert.assertEquals(9, teams.size());
 	}
 
 	@Test
 	public void getById() {
-		Team team = teamRepository.findOne(1L);
+		Team team = teamService.getById(1L);
 		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
-	}
-
-	@Test
-	public void findByTeamKey() {
-		List<Team> teams = teamRepository.findByTeamKey("salinas-cowboys");
-		Assert.assertEquals("Salinas Cowboys", teams.get(0).getFullName());
 	}
 
 //	@Test
 //	public void findByTeamKey() {
-//		Team team = teamRepository.findOne(1L);
-//		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
+//		List<Team> teams = teamService.findByTeamKey("salinas-cowboys");
+//		Assert.assertEquals("Salinas Cowboys", teams.get(0).getFullName());
 //	}
 
 //	@Test

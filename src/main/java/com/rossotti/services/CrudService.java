@@ -1,5 +1,7 @@
 package com.rossotti.services;
 
+import com.rossotti.domain.Team;
+
 import java.util.List;
 
 public interface CrudService<T> {

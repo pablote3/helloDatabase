@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="team", uniqueConstraints=@UniqueConstraint(columnNames={"teamKey"}))
-public class Team implements DomainObject {
+public class Team {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
