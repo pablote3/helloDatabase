@@ -15,24 +15,24 @@ import java.util.List;
 @SpringBootTest
 public class TeamServiceTest {
 
-	private TeamService teamService;
-
-	@Autowired
-	public void setTeamService(TeamService teamService) {
-		this.teamService = teamService;
-	}
-
-	@Test
-	public void findAll() {
-		List<Team> teams = (List<Team>)teamService.listAll();
-		Assert.assertEquals(9, teams.size());
-	}
-
-	@Test
-	public void getById() {
-		Team team = teamService.getById(1L);
-		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
-	}
+//	private TeamService teamService;
+//
+//	@Autowired
+//	public void setTeamService(TeamService teamService) {
+//		this.teamService = teamService;
+//	}
+//
+//	@Test
+//	public void findAll() {
+//		List<Team> teams = (List<Team>)teamService.listAll();
+//		Assert.assertEquals(9, teams.size());
+//	}
+//
+//	@Test
+//	public void getById() {
+//		Team team = teamService.getById(1L);
+//		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
+//	}
 
 //	@Test
 //	public void findByTeamKey() {

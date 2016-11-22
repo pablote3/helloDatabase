@@ -39,7 +39,7 @@ public class TeamRepositoryImpl implements TeamService {
 	}
 
 	@Override
-	public List<Team> findByTeamKey(String teamKey) {
+	public Team findByTeamKey(String teamKey) {
 		return teamRepository.findByTeamKey(teamKey);
 	}
 }
