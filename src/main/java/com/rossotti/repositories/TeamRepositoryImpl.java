@@ -38,6 +38,5 @@ public class TeamRepositoryImpl implements TeamService {
 
 	@Override
 	public void delete(Long id) {
-
 	}
 }

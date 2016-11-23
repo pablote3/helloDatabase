@@ -2,6 +2,7 @@ package com.rossotti.services;
 
 import com.rossotti.domain.Team;
 import com.rossotti.repositories.TeamRepository;
+import com.rossotti.repositories.TeamRepository2;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,24 +16,24 @@ import java.util.List;
 @SpringBootTest
 public class TeamRepositoryTest {
 
-	private TeamRepository teamRepository;
+	private TeamRepository2 teamRepository;
 
 	@Autowired
-	public void setTeamRepository(TeamRepository teamRepository) {
+	public void setTeamRepository(TeamRepository2 teamRepository) {
 		this.teamRepository = teamRepository;
 	}
 
-//	@Test
-//	public void findAll() {
-//		List<Team> teams = (List<Team>)teamRepository.findAll();
-//		Assert.assertEquals(9, teams.size());
-//	}
-//
-//	@Test
-//	public void getById() {
-//		Team team = teamRepository.findOne(1L);
-//		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
-//	}
+	@Test
+	public void findAll() {
+		List<Team> teams = (List<Team>)teamRepository.findAll();
+		Assert.assertEquals(9, teams.size());
+	}
+
+	@Test
+	public void getById() {
+		Team team = teamRepository.findOne(1L);
+		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
+	}
 
 	@Test
 	public void findByTeamKey() {
