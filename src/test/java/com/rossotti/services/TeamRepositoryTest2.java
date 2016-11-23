@@ -1,7 +1,7 @@
 package com.rossotti.services;
 
-import com.rossotti.domain.Team;
 import com.rossotti.repositories.TeamRepository;
+import com.rossotti.repositories.TeamRepository2;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,17 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TeamRepositoryTest {
+public class TeamRepositoryTest2 {
 
-	private TeamRepository teamRepository;
+	private TeamRepository2 teamRepository2;
 
 	@Autowired
-	public void setTeamRepository(TeamRepository teamRepository) {
-		this.teamRepository = teamRepository;
+	public void setTeamRepository(TeamRepository2 teamRepository2) {
+		this.teamRepository2 = teamRepository2;
 	}
 
 //	@Test
@@ -36,7 +34,7 @@ public class TeamRepositoryTest {
 
 	@Test
 	public void findByTeamKey() {
-		String fullName = teamRepository.findFullNameByTeamKey("salinas-cowboys");
+		String fullName = teamRepository2.findFullNameByTeamKey("salinas-cowboys");
 		Assert.assertEquals("Salinas Cowboys", fullName);
 	}
 

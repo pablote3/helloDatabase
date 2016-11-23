@@ -8,14 +8,14 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface TeamRepository extends Repository<Team, Long> {
-//	void delete(Long id);
-//
-//	List<Team> findAll();
-//
-//	Team findOne(Long id);
-//
-//	Team save(Team persisted);
+public interface TeamRepository2 extends Repository<Team, Long> {
+	void delete(Long id);
+
+	List<Team> findAll();
+
+	Team findOne(Long id);
+
+	Team save(Team persisted);
 
 	@Query("SELECT t.fullName FROM Team t where t.teamKey = :teamKey")
 	String findFullNameByTeamKey(@Param("teamKey") String teamKey);

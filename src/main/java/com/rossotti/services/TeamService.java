@@ -5,5 +5,5 @@ import com.rossotti.domain.Team;
 import java.util.List;
 
 public interface TeamService extends CrudService<Team> {
-	Team findByTeamKey(String teamKey);
+	String findFullNameByTeamKey(String teamKey);
 }
