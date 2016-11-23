@@ -1,7 +1,6 @@
 package com.rossotti.services;
 
 import com.rossotti.domain.Team;
-import com.rossotti.repositories.TeamRepository;
 import com.rossotti.repositories.TeamRepository2;
 import org.junit.Assert;
 import org.junit.Test;
