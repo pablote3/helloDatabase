@@ -15,10 +15,9 @@ public class TeamRepositoryImpl2 implements TeamService {
 		this.teamRepository = teamRepository;
 	}
 
-//	@Query("SELECT t.fullName FROM Team t where t.teamKey = :teamKey")
 	@Override
-	public String findFullNameByTeamKey(String teamKey) {
-		return teamRepository.findFullNameByTeamKey(teamKey);
+	public Team findByTeamKey(String teamKey) {
+		return teamRepository.findByTeamKey(teamKey);
 	}
 
 	@Override

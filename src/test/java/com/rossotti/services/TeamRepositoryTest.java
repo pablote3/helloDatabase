@@ -36,15 +36,15 @@ public class TeamRepositoryTest {
 
 	@Test
 	public void findByTeamKey() {
-		String fullName = teamRepository.findFullNameByTeamKey("salinas-cowboys");
-		Assert.assertEquals("Salinas Cowboys", fullName);
+		Team team = teamRepository.findByTeamKey("salinas-cowboys");
+		Assert.assertEquals("Salinas Cowboys", team.getFullName());
 	}
 
-//	@Test
-//	public void findByTeamKey() {
-//		Team team = teamRepository.findOne(1L);
-//		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
-//	}
+	@Test
+	public void findTeamByTeamKey() {
+		Team team = teamRepository.findOne(1L);
+		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
+	}
 
 //	@Test
 //	public void findTeamByKey_Found_FromDate() {

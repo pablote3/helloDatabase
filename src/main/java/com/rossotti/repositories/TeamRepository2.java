@@ -16,6 +16,8 @@ public interface TeamRepository2 extends Repository<Team, Long> {
 
 	Team save(Team persisted);
 
-	@Query("SELECT t.fullName FROM Team t where t.teamKey = :teamKey")
-	String findFullNameByTeamKey(@Param("teamKey") String teamKey);
+//	@Query("SELECT t.fullName FROM Team t where t.teamKey = :teamKey")
+//	String findFullNameByTeamKey(@Param("teamKey") String teamKey);
+
+	Team findByTeamKey(String teamKey);
 }
