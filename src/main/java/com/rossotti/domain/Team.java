@@ -1,9 +1,12 @@
 package com.rossotti.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Table(name="team", uniqueConstraints=@UniqueConstraint(columnNames={"teamKey"}))
+@Table(name="team", uniqueConstraints=@UniqueConstraint(columnNames={"teamKey", "fromDate", "toDate"}))
 public class Team {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
@@ -22,6 +25,24 @@ public class Team {
 	}
 	public void setTeamKey(String teamKey) {
 		this.teamKey = teamKey;
+	}
+
+	@Column(name="fromDate", nullable=false)
+	private LocalDate fromDate;
+	public LocalDate getFromDate() {
+		return fromDate;
+	}
+	public void setFromDate(LocalDate fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	@Column(name="toDate", nullable=false)
+	private LocalDate toDate;
+	public LocalDate getToDate() {
+		return toDate;
+	}
+	public void setToDate(LocalDate toDate) {
+		this.toDate = toDate;
 	}
 
 	@Column(name="firstName", length=15, nullable=false)
