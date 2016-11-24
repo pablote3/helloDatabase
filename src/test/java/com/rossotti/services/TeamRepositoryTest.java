@@ -40,12 +40,6 @@ public class TeamRepositoryTest {
 		Assert.assertEquals("Salinas Cowboys", team.getFullName());
 	}
 
-	@Test
-	public void findTeamByTeamKey() {
-		Team team = teamRepository.findOne(1L);
-		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
-	}
-
 //	@Test
 //	public void findTeamByKey_Found_FromDate() {
 //		Team findTeam = teamService.findTeam("harlem-globetrotter's", new LocalDate("2009-07-01"));
