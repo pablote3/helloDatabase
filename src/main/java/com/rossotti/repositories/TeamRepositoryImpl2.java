@@ -4,6 +4,8 @@ import com.rossotti.domain.Team;
 import com.rossotti.services.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class TeamRepositoryImpl2 implements TeamService {
@@ -18,6 +20,11 @@ public class TeamRepositoryImpl2 implements TeamService {
 	@Override
 	public Team findByTeamKey(String teamKey) {
 		return teamRepository.findByTeamKey(teamKey);
+	}
+
+	@Override
+	public Team findByTeamKeyAndDate(String teamKey, LocalDate date) {
+		return teamRepository.findByTeamKeyAndFromDateBeforeAndToDateAfter(teamKey, date.plusDays(1), date.minusDays(1));
 	}
 
 	@Override

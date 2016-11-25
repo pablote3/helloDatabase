@@ -1,31 +1,39 @@
 package com.rossotti.services;
 
+import com.rossotti.domain.Team;
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringRunner.class)
+import java.util.List;
+
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
+//@ComponentScan(basePackages = {"com.rossotti.services"})
 public class TeamServiceTest {
-//
-//	private TeamService teamService;
-//
-//	@Autowired
-//	public void setTeamService(TeamService teamService) {
-//		this.teamService = teamService;
-//	}
-//
-//	@Test
-//	public void findAll() {
-//		List<Team> teams = (List<Team>)teamService.listAll();
-//		Assert.assertEquals(9, teams.size());
-//	}
-//
-//	@Test
-//	public void getById() {
-//		Team team = teamService.getById(1L);
-//		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
-//	}
+
+	private TeamService teamService;
+
+	@Autowired
+	public void setTeamService(TeamService teamService) {
+		this.teamService = teamService;
+	}
+
+	@Test
+	public void findAll() {
+		List<Team> teams = (List<Team>)teamService.listAll();
+		Assert.assertEquals(9, teams.size());
+	}
+
+	@Test
+	public void getById() {
+		Team team = teamService.getById(1L);
+		Assert.assertEquals("Chicago Zephyr's", team.getFullName());
+	}
 
 //	@Test
 //	public void findByTeamKey() {

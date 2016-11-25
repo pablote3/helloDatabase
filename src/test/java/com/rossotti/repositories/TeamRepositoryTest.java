@@ -1,17 +1,17 @@
-package com.rossotti.services;
+package com.rossotti.repositories;
 
 import com.rossotti.domain.Team;
-import com.rossotti.repositories.TeamRepository2;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.time.LocalDate;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class TeamRepositoryTest {
 
@@ -40,13 +40,12 @@ public class TeamRepositoryTest {
 		Assert.assertEquals("Salinas Cowboys", team.getFullName());
 	}
 
-//	@Test
-//	public void findTeamByKey_Found_FromDate() {
-//		Team findTeam = teamService.findTeam("harlem-globetrotter's", new LocalDate("2009-07-01"));
-//		Assert.assertEquals("Harlem Globetrotter's", findTeam.getFullName());
-//		Assert.assertTrue(findTeam.isFound());
-//	}
-//
+	@Test
+	public void findTeamByKey_Found_FromDate() {
+		Team findTeam = teamRepository.findByTeamKeyAndFromDateBeforeAndToDateAfter("harlem-globetrotter's", LocalDate.of(2009, 7, 2), LocalDate.of(2009, 6, 30));
+		Assert.assertEquals("Harlem Globetrotter's", findTeam.getFullName());
+	}
+
 //	@Test
 //	public void findTeamByKey_Found_ToDate() {
 //		Team findTeam = teamService.findTeam("harlem-globetrotter's", new LocalDate("2010-06-30"));

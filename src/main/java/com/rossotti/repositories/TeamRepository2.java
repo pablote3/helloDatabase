@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface TeamRepository2 extends Repository<Team, Long> {
@@ -20,4 +21,6 @@ public interface TeamRepository2 extends Repository<Team, Long> {
 //	String findFullNameByTeamKey(@Param("teamKey") String teamKey);
 
 	Team findByTeamKey(String teamKey);
+
+	Team findByTeamKeyAndFromDateBeforeAndToDateAfter(String teamKey, LocalDate fromDate, LocalDate toDate);
 }
