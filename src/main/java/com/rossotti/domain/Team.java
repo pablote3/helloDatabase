@@ -1,7 +1,5 @@
 package com.rossotti.domain;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
