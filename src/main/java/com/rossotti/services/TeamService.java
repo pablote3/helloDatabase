@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public interface TeamService extends CrudService<Team> {
 	Team findByTeamKey(String teamKey);
 	Team findByTeamKeyAndDate(String teamKey, LocalDate date);

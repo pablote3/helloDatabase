@@ -6,14 +6,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
-//@ComponentScan(basePackages = {"com.rossotti.services"})
 public class TeamServiceTest {
 
 	private TeamService teamService;
@@ -24,9 +22,9 @@ public class TeamServiceTest {
 	}
 
 	@Test
-	public void findAll() {
+	public void listAll() {
 		List<Team> teams = (List<Team>)teamService.listAll();
-		Assert.assertEquals(9, teams.size());
+		Assert.assertEquals(11, teams.size());
 	}
 
 	@Test
